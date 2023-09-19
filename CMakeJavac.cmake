@@ -60,6 +60,9 @@ macro(CMakeJavac)
         message(FATAL_ERROR "fail to compile")
     endif()
     
+    set(CMakeJavac.last_result ${${m}_res}) 
+    set(CMakeJavac.last_output ${${m}_out}) 
+    set(CMakeJavac.last_error ${${m}_err}) 
     
     foreach(__v ${${m}_unsetter})
         unset(${__v})
